@@ -1,0 +1,315 @@
+@charset "utf-8";
+/* ***************************
+ * 共通スタイル
+ ************************** */
+* {
+  box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -ms-box-sizing:border-box;
+  -o-box-sizing:border-box;
+}
+/* 選択文字色 */
+::selection{background:#8993FF;}
+::-webkit-selection{background:#8993FF;}
+::-moz-selection{background:#8993FF;}
+::-o-selection{background:#8993FF;}
+::-ms-selection{background:#8993FF;}
+
+/* WEBフォントを指定 */
+@font-face{
+  font-family: "Syncopate";
+  src : local("Syncopate");
+  src : url("/font/Syncopate-Regular.ttf");
+}
+html,
+body{
+  margin: 0;
+  padding: 0;
+  color: rgb(52, 73, 94);
+  background: #fff;
+  text-align: center;
+  font-size: 13px;
+}
+html{
+  border-top:30px solid rgba(0,0,0,.8);
+  width: 100%;
+  min-width: 1080px;
+  font: 10px/1 "Hiragino Kaku Gothic Pro",Meiryo,sans-serif;
+}
+body{
+  width: 1080px;
+  position: relative;
+  text-align: left;
+  color: navy;
+  min-height: 600px;
+  margin:0 auto;
+  overflow: hidden;
+}
+/* リセット関連 */
+ul{list-style: none;}
+img{border: 0;}
+ul,li,p{margin: 0;padding: 0;}
+h1,h2{font-family: "Syncopate", sans-serif;}
+h1,
+h2,
+h3{
+  display: inline;
+  font-size: inherit;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+h1 span{color:#00c2ff;}
+a{display: block;text-decoration: none;color: inherit;}
+
+/* HTML5タグ */
+header,nav,article,section,footer{display: block;}
+/* フッターエリア */
+.footer{
+  color:#fff;
+  position: fixed;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background: rgba(0,0,0,.8);
+  z-index: 2;
+  overflow: hidden;
+  left: 0;
+  bottom: 0;
+}
+
+/* タイトル表示領域 */
+.main-area{
+  position: relative;
+  width: 300px;
+  height: 70px;
+  margin: 0;
+  padding: 0;
+  color: navy;
+}
+.title{
+  font-size: 33px;
+  position: absolute;
+  top: 10px;
+  left: -1000px;
+}
+.catchp{
+  position: absolute;
+  top: 45px;
+  left: -1000px;
+  color:navy;
+}
+/* タイトルスライドアニメーション */
+.from-left-slide-ttl{
+  -moz-animation: from-left-slide-ttl 350ms ease 0s 1 normal;
+  -webkit-animation: 'from-left-slide-ttl' 350ms ease 0s 1 normal;
+  -o-animation: from-left-slide-ttl 350ms ease 0s 1 normal;
+  -ms-animation: 'from-left-slide-ttl' 350ms ease 0s 1 normal;
+  animation: 'from-left-slide-ttl' 350ms ease 0s 1 normal;
+}
+@-moz-keyframes from-left-slide-ttl{0%{left:  -1000px;}100%{left: 40px;}}
+@-webkit-keyframes 'from-left-slide-ttl'{0%{left: -1000px;}100%{left: 40px;}}
+@-o-keyframes from-left-slide-ttl{0%{left: -1000px;}100%{left: 40px;}}
+@-ms-keyframes 'from-left-slide-ttl'{0%{left: -1000px;}100%{left: 40px;}}
+@keyframes 'from-left-slide-ttl'{0%{left: -1000px;}100%{left: 40px;}}
+/* キャッチスライドアニメーション */
+.from-left-slide-cth{
+  -moz-animation: from-left-slide-cth 350ms ease 0s 1 normal;
+  -webkit-animation: 'from-left-slide-cth' 350ms ease 0s 1 normal;
+  -o-animation: 'from-left-slide-cth' 350ms ease 0s 1 normal;
+  -ms-animation: 'from-left-slide-cth' 350ms ease 0s 1 normal;
+  animation: 'from-left-slide-cth' 350ms ease 0s 1 normal;
+}
+@-moz-keyframes from-left-slide-cth{0%{left:  -170px;}100%{left: 100px;}}
+@-webkit-keyframes 'from-left-slide-cth'{0%{left: -170px;}100%{left: 100px;}}
+@-o-keyframes 'from-left-slide-cth'{0%{left: -170px;}100%{left: 100px;}}
+@-ms-keyframes 'from-left-slide-cth'{0%{left: -170px;}100%{left: 100px;}}
+@keyframes 'from-left-slide-cth'{0%{left: -170px;}100%{left: 100px;}}
+
+/* メニューエリア */
+.sub-area{
+  display: inline-block;
+  width: 300px;
+  height: 330px;
+  margin: 30px auto;
+  padding: 0;
+}
+.menu{
+  width: 300px;
+  height: 310px;
+  position: relative;
+  font-size: 18px;
+  font-family: "Syncopate", sans-serif;
+}
+.menu li{
+  position: absolute;
+  left: 10000%;
+  width: 232px;
+  height: 40px;
+  cursor: pointer;
+  line-height: 40px;
+  padding: 0 10px 0;
+  z-index: 10;
+  border-left-width:0px;
+  border-left-style:solid;
+  border-left-color:aliceblue;
+  border-bottom:0px solid navy;
+  transition: left 150ms ease, border-left-width 150ms ease,border-bottom 250ms ease-in-out;
+  -webkit-transition: left 150ms ease, border-left-width 150ms ease,border-bottom 250ms ease-in-out;
+  -moz-transition: left 150ms ease, border-left-width 150ms ease,border-bottom 250ms ease-in-out;
+  -ms-transition: left 150ms ease, border-left-width 150ms ease,border-bottom 250ms ease-in-out;
+  -o-transition: left 150ms ease, border-left-width 150ms ease,border-bottom 250ms ease-in-out;
+}
+.menu li a{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.menu li:hover{border-left-width:8px;}
+.border-hover{border-left-width: 8px;}
+.p-text-hover{color:#FF7676;}
+.w-text-hover{color:#99FFAE;}
+.l-text-hover{color:#F8F140;}
+.b-text-hover{color:#ABA0FF;}
+.c-text-hover{color:#FF9E67;}
+.p-border-hover{border-left-color:#FF7676;}
+.w-border-hover{border-left-color:#99FFAE;}
+.l-border-hover{border-left-color:#F8F140;}
+.b-border-hover{border-left-color:#ABA0FF;}
+.c-border-hover{border-left-color:#FF9E67;}
+
+#p{top:10px;}
+#w{top:70px;}
+#l{top:130px;}
+#b{top:190px;}
+#c{top:250px;}
+
+#p:hover{border-left-color:#FF7676;}
+#p:hover #pText:first-letter{color:#FF7676;}
+
+#w:hover{border-left-color:#99FFAE;}
+#w:hover #wText:first-letter{color:#99FFAE;}
+
+#l:hover{border-left-color:#F8F140;}
+#l:hover #lText:first-letter{color:#F8F140;}
+
+#b:hover{border-left-color:#ABA0FF;}
+#b:hover #bText:first-letter{color:#ABA0FF;}
+
+#c:hover{border-left-color:#FF9E67;}
+#c:hover #cText:first-letter{color:#FF9E67;}
+
+/* メニュースライドアニメーション */
+.from-right-slide-nav{
+  -moz-animation: from-right-slide-nav 300ms ease 0s 1 normal;
+  -webkit-animation: 'from-right-slide-nav' 300ms ease 0s 1 normal;
+  -o-animation: 'from-right-slide-nav' 300ms ease 0s 1 normal;
+  -ms-animation: 'from-right-slide-nav' 300ms ease 0s 1 normal;
+  animation: 'from-right-slide-nav' 300ms ease 0s 1 normal;
+}
+@-moz-keyframes from-right-slide-nav{0%{left: 10000%;}100%{left: 40px;}}
+@-webkit-keyframes 'from-right-slide-nav'{0%{left:10000%;}100%{left: 40px;}}
+@-o-keyframes 'from-right-slide-nav'{0%{left:10000%;}100%{left: 40px;}}
+@-ms-keyframes 'from-right-slide-nav'{0%{left:10000%;}100%{left: 40px;}}
+@keyframes 'from-right-slide-nav'{0%{left:10000%;}100%{left: 40px;}}
+
+/* ***************************
+ * コンテンツ共通スタイル
+ ************************** */
+.content-view{
+  position: absolute;
+  overflow: scroll;
+  opacity: 0;
+  left: 300px;
+  top: 5px;
+  width: 70%;
+  height: 100%;
+  background: #fff;
+  transition:opacity 1000ms ease,height 100ms ease, border-left 500ms ease,border-top 500ms ease, border-bottom 500ms ease,border-right 500ms ease;
+  -webkit-transition:opacity 1000ms ease, height 100ms ease, border-left 500ms ease,border-top 500ms ease, border-bottom 500ms ease,border-right 500ms ease;
+  -moz-transition:opacity 1000ms ease, height 100ms ease, border-left 500ms ease,border-top 500ms ease, border-bottom 500ms ease,border-right 500ms ease;
+  -ms-transition:opacity 1000ms ease, height 100ms ease, border-left 500ms ease,border-top 500ms ease, border-bottom 500ms ease,border-right 500ms ease;
+  -o-transition:opacity 1000ms ease, height 100ms ease, border-left 500ms ease,border-top 500ms ease, border-bottom 500ms ease,border-right 500ms ease;
+}
+/* h2タグエリア */
+.content-view h2{
+  float: left;
+  font-size: 19px;
+  padding: 0 0 0 15px;
+  color:#fff;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  background: #333;
+  transition: opacity 2000ms ease;
+  -webkit-transition: opacity 2000ms ease;
+  -moz-transition: opacity 2000ms ease;
+  -ms-transition: opacity 2000ms ease;
+  -o-transition: opacity 2000ms ease;
+}
+/* アローアイコン */
+.content-view h2:before{
+  float: left;
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 7px 0 7px 11px;
+  position: relative;
+  top: 16px;
+  left: -6px;
+  margin: 0 10px;
+  -moz-animation: cycle-arrow 4s linear 0s infinite normal;
+  -webkit-animation: 'cycle-arrow' 4s linear 0s infinite normal;
+  -o-animation: 'cycle-arrow' 4s linear 0s infinite normal;
+  -ms-animation: 'cycle-arrow' 4s linear 0s infinite normal;
+  animation: 'cycle-arrow' 4s linear 0s infinite normal;
+}
+.content-view h2.index-arrow:before{border-color: transparent transparent transparent #00c2ff;}
+.content-view h2.profile-arrow:before{border-color: transparent transparent transparent #FF7676;}
+.content-view h2.works-arrow:before{border-color: transparent transparent transparent #99FFAE;}
+.content-view h2.labo-arrow:before{border-color: transparent transparent transparent #F8F140;}
+.content-view h2.contact-arrow:before{border-color: transparent transparent transparent #FF9E67;}
+
+.content-view h2:after{clear: both;display: block;content: '';}
+/* アローアイコンアニメーション */
+@-moz-keyframes cycle-arrow{0%{-moz-transform: rotateX(0);}100%{-moz-transform: rotateX(360deg);}}
+@-webkit-keyframes 'cycle-arrow'{0%{-webkit-transform: rotateX(0);}100%{-webkit-transform: rotateX(360deg);}}
+@-o-keyframes 'cycle-arrow'{0%{-o-transform: rotateX(0);}100%{-o-transform: rotateX(360deg);}}
+@-ms-keyframes 'cycle-arrow'{0%{-ms-transform: rotateX(0);}100%{-ms-transform: rotateX(360deg);}}
+@keyframes 'cycle-arrow'{0%{transform: rotateX(0);}100%{transform: rotateX(360deg);}}
+
+/* コンテンツの中身 */
+.inner-contents{
+  padding:20px;
+  margin: 50px auto 5px;
+}
+
+/* ***************************
+ * インデックスページスタイル
+ ************************** */
+.index-view ul li{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 10px;
+  border-bottom: 1px dashed #eee;
+}
+.index-view a{
+  display: inline;
+  text-decoration: underline;
+  color: #00f;
+}
+.index-view li span{padding: 25px;}
+
+/* ***************************
+ * プロフィールページスタイル
+ ************************** */
+.img-prof{
+  width: 128px;
+  height: 128px;
+  overflow: hidden;
+}
